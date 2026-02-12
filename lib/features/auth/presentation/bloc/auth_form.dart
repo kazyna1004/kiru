@@ -46,14 +46,14 @@ class AuthFormBloc extends Bloc<AuthFormEvent, AuthFormState> {
     String? passwordError;
 
     if (email.isEmpty) {
-      emailError = 'Поле не может быть пустым';
+      emailError = 'Поле не должен быть пустым';
     } else if (!RegExps.emailRegex.hasMatch(email)) {
       emailError = 'Некорректный адрес';
     }
     if (password.isEmpty) {
-      passwordError = 'Поле не может быть пустым';
+      passwordError = 'Поле не должен быть пустым';
     } else if (password.length < 4) {
-      passwordError = 'Пароль должен быть минимум 4 символа';
+      passwordError = 'Пароль должен быть минимум 5 символа';
     }
 
     if (passwordError != null || emailError != null) {
